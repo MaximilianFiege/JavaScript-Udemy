@@ -1,0 +1,6 @@
+Inline Code: <script> console.log('Hello World'); </script>
+
+External Code: <script src = "script.js"> </script>
+- Where script.js was just the former inline function
+
+You can check the script by going to the index.html local page and examining console log.
