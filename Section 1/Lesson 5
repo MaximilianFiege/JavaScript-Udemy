@@ -1,0 +1,9 @@
+Javascript is lightweight, cross-platform, and object-oriented
+
+JS is one of three core technologies of web development
+- Beside HTML and CSS
+- HTML is content (nouns), CSS is presentation (adjective), JS is for interactivity (verb)
+
+JS was traditionally only for web pages (i.e. client-side) but node.js allows for server-side functionality
+
+React and Angular are frameworks/libraries built on JS
