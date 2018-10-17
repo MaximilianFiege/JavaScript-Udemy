@@ -1,0 +1,9 @@
+Falsy values are determined false in an if/else statement 
+- Either undefined, null, 0, '', NaN
+
+Truthy values are the opposite
+- Subset comprised of all NOT falsy values
+
+Good way to test if a value has been defined.
+- Make sure to account for 0 being mistakenly labeled as unidentified with an OR statement.
+
