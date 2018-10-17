@@ -1,0 +1,4 @@
+Three Equal Signs
+- Will not type juggle. Has to be the same value and same data type
+Two Equal Signs
+- Will type juggle. 1 == 1, '1', True
