@@ -1,0 +1,19 @@
+var ____ = "string";
+console.log(firstName);
+
+^ This results in the same output as in the Hello World intro. Console log is based into the index.html via script.js
+
+5 Different Datatypes
+- Number
+  - Always floating point
+- String
+  - Characters
+- Boolean
+  - True or False
+- Undefined
+  - Automatically assigned to unassigned vars
+  - Means "non-existent"
+- Null
+  - Non-existent
+
+JS has dynamic typing, meaning that variables can automatically be assigned
