@@ -1,0 +1,23 @@
+OR has lower precedence than AND
+
+(conditional statement) : (true result) ? (false result)
+- You can assign a boolean in the conditional statement
+
+Switch statement is the same as c++
+switch (job) {
+  case 'teacher':
+    console.log();
+    break;
+  case 'driver':
+    console.log();
+    break;
+  default:
+    console.log();
+}
+
+For multiple cases with same output, you can stack
+ case 'teacher':
+ case 'instructor':
+  ~function~
+  
+  
