@@ -1,0 +1,17 @@
+Comments are the same as in C++
+
+Type coercion means that JS converts variables if you want to combine them.
+- firstName + age returns a string that includes the age converted to a string
+- Booleans convert to the words true or false as strings
+
+Declare multiple variables with a comma after the initial declaration
+- Make sure to define after
+
+Variable mutation is redefining a variable with another data type
+- i.e. 28 to twenty-eight
+
+alert() has a dialogue box pop up
+
+prompt() has an input field
+- String inside the brackets is the question accompanying the prompt
+- var lastName = prompt('What is his last name?')
