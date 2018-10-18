@@ -1,0 +1,15 @@
+Pretty much same as C++
+
+Clever way to add on: array[array.length] = *new element*
+- or just push
+
+Can hold multiple data types
+
+Array Methods:
+- .length = sum of elements
+- .push = add to end of array
+- .unshift = add to beginning of array
+- .pop = remove end of array
+- .shift = remove front of array
+- .indexOf() = position of argument in the array (0 centered) (returns -1 if not in array)
+
