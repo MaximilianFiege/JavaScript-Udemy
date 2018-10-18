@@ -1,0 +1,12 @@
+//Object Literal
+Objects are like arrays, but position doesn't matter.
+- Defined with curly brackets
+- Key:Value pairs
+- Can hold another object or array within itself
+
+You can call an object element like you would an array, but via the key
+- john['lastName']
+- call has to be akin to the data type (put string keys in quotes)
+
+//New Object
+Can declare new object like an array i.e. new Jane();
