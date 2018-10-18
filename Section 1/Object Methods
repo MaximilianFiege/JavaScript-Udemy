@@ -1,0 +1,4 @@
+Methods are functions within objects
+
+"this" keyword refers to object being manipulated
+- john.calcAge(this.birthYear)
