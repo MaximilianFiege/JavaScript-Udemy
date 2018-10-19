@@ -1,0 +1,59 @@
+** Parsers and Engines **
+
+Engines are programs that execute JS code (Chrome uses V8, SpiderMonkey is another example)
+- Within the engine, the parser checks for syntax
+
+Parser produces an Abstract Syntax Tree if code is deemed legible
+- This is then converted to bytecode for the CPU
+
+** Execution Stack **
+
+Execution Context
+- A box, container, or wrapper which stores variables and in which code is evaluated and executed
+- There is a hierarchy to these contexts, i.e. the execution stack
+
+1. The Global Context
+  - Code that is not inside any function
+  - Associated with the global object
+
+2. through n.
+  - As functions get called, they get put on top of the stack.
+  - The last function gets totally executed, and then we go back down the stack.
+
+** Creation and Execution Phases and Hoisting/ScopeChain/This **
+
+An execution context is an object containing three elements
+- Variable Object (VO) contains function arguments, intervariable declarations, and function declarations
+- The scope chain contains variable objects, variable object of their parents
+- "this" variable
+
+Hoisting means that JS makes functions and variables available before they are defined (see VO creation phase)
+- Functions are defined in the creation phase
+  - You can execute functions prior to the declaration (does not work for function expression)
+- Variables are defined in the execution phase
+  - Variables stored in the global context are different from those in a function context (i.e. var age can exist both in global and functional as different vars)
+
+Scoping answers where can we access a variable?
+ - Each new function creates a new scope
+ - Lexical scoping means that a function written within another has access to the scope of the outer
+ - Scope chain is the concentric circle model of the execution stack
+  - global only has access to child function scopes if they return variables
+  
+this references different things depending on position (does not have a value until a function calls it)
+- Regular function call, it references the global object
+- Method call, it references the respective object
+  - A function within a method call is still a function call, and refers to the global object
+ 
+How a next execution context is built
+  1. Creation Phase
+    - Variable Object
+      - Contains all the arguments that were passed to the function
+      - Code is scanned for function declarations, with pointers to those functions being created 
+      - Code is scanned for variable declarations, with each receiving an undefined property within this VO
+    - Scope Chain
+    - Determine value of 'this'
+  2. Execution Phase
+    - The code of the function that generated the current execution context is run line by line.
+
+Method borrowing allows you to take things from previously declared objects and append to new ones
+- mike.calculateAge = john.calculateAge;
