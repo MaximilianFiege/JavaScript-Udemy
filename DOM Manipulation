@@ -1,0 +1,56 @@
+DOM manipulation is making JS scripts that interact with existing webpages
+- DOM = Document Object Model
+- The structured model of an HTML document that connects webpages to scripts
+
+For each HTML box, there is an object in the DOM that we can access and interact with.
+- Scripts that interact or manipulate webpages can be thought as methods of an object - the document object
+
+** HTML Crash Course **
+- Elements: ending tags, content, closing tags
+- Nested elements by tabbing 
+- Elements can have attributes
+  - class, id, src, alt
+    - class allows us to name certain elements
+    - id also names elements, but always uniquely
+    
+ Use a hash to select an id
+ - '#player-0'
+
+HTML documents are divided into two parts, header and body
+- Body is the visible part of the webpage
+- Header contains title, key words, and imports (APIs etc), and CSS style sheet links 
+
+** CSS **
+Provides content organization
+- Declare classes here, body design, universal selector (entire webpage styling)
+
+JS can override CSS through the .querySelector
+
+** Pig Game **
+Math object is like this but for performing calculations
+- Math.random() is an RNG for numbers between 0 and 1
+  - Multiply it by 6 for a dice game
+- Math.floor() removes decimal points
+  - Math.floor(Math.random() * 6) + 1
+
+Document object gives access to DOM
+- document.querySelector() allows you to pinpoint the specific object
+- Using the .innerHTML method requires a string at the end ( '<em>' + dice + '</em>' to emphasize output)
+- .getElementByID is faster than .querySelector for IDs
+
+Events are notifications sent to notify the code that something happened on the webpage (e.g. clicking a button, scrolling)
+- Event listeners are specific functions that perform actions based on certain events
+- Event listners can only execute at the bottom of the stack, i.e. after all functions return
+  - JS has built in events you can reference
+
+The message que is adjacent to the execution stack
+- Records all events that are then processed following the execution stack emptying
+- Message que processes events and puts event listeners on the execution stack
+
+Callback functions are those that are not called by the user, but by other functions (via events)
+
+Anonymous functions lack a name and can only be called in the event that they're declared in.
+- function() { //Whatever}
+
+A state variable tells us the condition of a system
+- Is the game in play or not
