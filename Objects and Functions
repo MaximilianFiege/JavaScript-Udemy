@@ -1,0 +1,103 @@
+Primitives are all values that have one of the aforementioned data types
+- numbers, strings, booleans, undefined, null
+
+Objects are all the things composred by these data types
+- arrays, functions, objects, dates, wrappers
+
+Object-oriented Programming
+- Objects interacting with one another through methods and properties
+- Objects used for data storage and application modules
+
+Constructors/prototypes are object blueprints
+- e.g. Person with name, birth year, job, etc.
+- Objects produced by these are referred to as instances
+
+Inheritance is when one object is based on another object
+- Gets access to another's properties and methods
+- Made possible by the prototype property every object has for its instances
+
+All objects we declare are themselves inheriting from a universal Object
+- i.e. every object has a set of JS methods you don't need to declare
+- this is the prototype chain: Object -> objects -> instances
+  - the universal Object points to null, ending the chain
+
+** Summary **
+Every JS object has a prototype property, which makes inheritance possible in JS
+The prototype property of an object is where we put methods and properties that we want other instances to inherit
+When a certain property or method is called, the search starts in that instance and moves up its prototype chain
+
+** Coding **
+
+Function constructors should always be capitalized
+
+The new operator creates an empty object, then the function is called to assign properties by executing within its own execution context with the this pointer
+
+var Person = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person.prototype.calculateAge = function () {
+    console.log( 2016 - this.yearOfBirth);
+}
+
+var john = new Person('John', 1990, 'Teacher');
+var jane = new Person ('Jane', 1969, 'Designer');
+var mark = new Person('Mark', 1948, 'Retired');
+
+john.calculateAge();
+jane.calculateAge();
+mark.calculateAge();
+
+** Prototype Chain in the Console **
+Inspecting an object in the console allows you to see prototypes it inherits
+
+You should be able to prove instance.__proto__ === Object.prototype
+
+** Object.create method **
+
+The difference between this and the function constructor pattern is that the object.create builds an object that inherits directly from the object that is passed to it, while the constructor creates instances that inherit from its prototype property
+
+var personProto = {
+    calculateAge: function () {
+        console.log(2016 - this.yearOfBirth);
+    }
+};
+
+var john = Object.create(personProto);
+john.name = 'Name';
+john.yearOfBirth = 1990;
+john.job = 'teacher';
+
+var jane = Object.creat(personProto, {
+    name: {value: 'Jane'},
+    yearOfBirth: {value: 1969},
+    job: {value: 'designer'}
+});
+
+** Primitives vs Objects **
+
+Difference is that variables containing primitives store the data within the variable itself
+- Variables associated with objects do not actually contain the object, they contain a reference to where the data sits
+
+var age = 27;
+var obj = {
+    name: 'Jonas',
+    city: 'Lisbon'
+};
+
+function change(a,b) {
+    a = 30;
+    b.city = 'San Francisco';
+};
+
+change(age,obj);
+
+console.log(age);
+console.log(obj.city);
+
+
+
+
+
